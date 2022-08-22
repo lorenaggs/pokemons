@@ -12,7 +12,7 @@ enum IconType {
 
 const PokemonItemBack = () => {
 
-    const [labelBtn, setLblBtn] = useState('Borra de la lista')
+    const [labelBtn, setLblBtn] = useState('Borrar de la lista')
     const dispatch = useDispatch();
 
     const { fightingPokemons, pokemonSelected } = useSelector((state: any) => state.pokemons)
@@ -29,7 +29,8 @@ const PokemonItemBack = () => {
     })
 
     const handlerFightingPokemon = () => {
-        if (labelBtn === 'Borra de la lista') {
+
+        if (labelBtn === 'Borrar de la lista') {
             const newFigthers = fightingPokemons.filter((pokemon: PokemonsData) => pokemon.id !== Number(id))
             // @ts-ignore
             dispatch(SetFightingPokemons([...newFigthers]))
@@ -42,10 +43,12 @@ const PokemonItemBack = () => {
                 icon: pokemonSelected.id ? IconType.trash : IconType.add,
                 showIcon: true
             }
-            // @ts-ignore
-            dispatch(SetFightingPokemons([...fightingPokemons, pokemonAction], updateTokens))
+            if (fightingPokemons.length <= 6) {
+                // @ts-ignore
+                dispatch(SetFightingPokemons([...fightingPokemons, pokemonAction], updateTokens))
+                setLblBtn('Borrar de la lista')
+            }
         }
-        
     }
 
     useEffect(() => {
