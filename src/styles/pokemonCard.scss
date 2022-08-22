@@ -39,6 +39,20 @@
     cursor: pointer;
 }
 
+.fa-solid.fa-check-double{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: white;
+    background-color: rgb(26, 238, 72);
+    width: 25px;
+    height: 25px;
+    border-radius: 90%;
+    right: -97px;
+    top: 17px;
+}
+
 .cardImage {
     display: flex;
     flex-direction: column;
@@ -91,6 +105,13 @@
     }
 
     .fa-solid.fa-plus {
+        width: 30px;
+        height: 30px;
+        right: -103px;
+        top: 17px;
+    }
+
+    .fa-solid.fa-check-double{
         width: 30px;
         height: 30px;
         right: -103px;
