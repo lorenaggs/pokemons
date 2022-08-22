@@ -39,8 +39,9 @@ flex-direction: column;
 }
 
 .type{
-  background-color: red;
+  background-color: rgb(243, 158, 158);
   width: 100px;
+  margin: 5px;
 }
 
 
@@ -48,9 +49,10 @@ flex-direction: column;
   .imageItem {
     height: 250px;
   }
-
-  .detail {
-  flex-direction: row;
-  }
 }
 
+@media all and(min-width: 1024px){
+  .detail {
+    flex-direction: row;
+    }
+}

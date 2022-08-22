@@ -1,45 +1,9 @@
-@import './styles/variables.scss';
+
 @import './styles/reset.scss';
 @import './styles/app.scss';
 @import './styles/finder.scss';
 @import './styles/pokemonCard.scss';
 @import './styles/pokemonItem.scss';
 @import './styles/pokemonItemBack.scss';
-
-.container_favorites {
-  background-color: rgb(242, 215, 181);
-  height: 100%;
-  width: 40%;
-  position: fixed;
-  right: 0px;
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
-
-.list {
-  text-transform: uppercase;
-  font-size: 14px;
-  padding: 10px 2px;
-  margin: 22px 2px;
-  border: 1px solid sandybrown;
-  background: rgb(202, 156, 123);
-  border-radius: 10px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: pre;
-}
-
-.fa-solid.fa-trash-can {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  background-color: white;
-  width: 25px;
-  height: 25px;
-  border-radius: 90%;
-  right: -107px;
-  top: -10px;
-  cursor: pointer;
-}
+@import './styles/fightingPokemons.scss'
 

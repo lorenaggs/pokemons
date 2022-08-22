@@ -39,15 +39,19 @@ const PokemonItem = () => {
                         <p>Altura: {pokemonSelected.height}</p>
                         <p>Tipo {
                             pokemonSelected.types && pokemonSelected.types.map((x:Type) => (
-                                <p className='type'>- {x.type.name}</p>
+                                <p className='type'>{x.type.name}</p>
                             ))
                         }</p>
-                        <p>Estadisticas base</p>
+                        
+                    </section>
+                    
+                </div>
+                <section>
+                    <p>Estadisticas base</p>
                         <section className='pokemonStats'>
                             {pokemonSelected.stats && <RadarChart data={pokemonSelected.stats}/>}
                         </section>
                     </section>
-                </div>
             </div>
         );
     }
