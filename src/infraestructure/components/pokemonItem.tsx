@@ -18,8 +18,6 @@ const PokemonItem = () => {
     const {isLoading,  pokemonSelected, fightingPokemons } = useSelector( (state:any) => state.pokemons )
 
     useEffect(()=>{
-
-        console.log(pokemonSelected)
         // @ts-ignore
         dispatch(getPokemonSelected(id))
     },[])

@@ -1,5 +1,6 @@
 import {createSlice} from "@reduxjs/toolkit";
 import {PokemonsData} from "../../../models";
+
 const pokemonDefault = {
     name:   'default',
     url:    '',

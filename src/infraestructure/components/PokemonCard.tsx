@@ -11,6 +11,7 @@ enum IconType {
     add='fa-plus',
     trash = 'fa-trash-can'
 }
+
 interface Props {
     dataPokemons: PokemonsData[]
     fightingPokemons?: PokemonsData[]
