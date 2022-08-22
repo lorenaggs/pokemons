@@ -49,8 +49,17 @@ const PokemonCard = ( {dataPokemons, fightingPokemons, filterPokemon}:Props )=>{
             return
         }
         if(fightingPokemons?.length <= 6){
+            const updateTokens = dataPokemons.map( (pokemon: PokemonsData)=> {
+                if(pokemon.id === pokemonAction.id){
+                    return {
+                        ...pokemon,
+                        showIcon: false
+                    }
+                }
+                return pokemon
+            })
             // @ts-ignore
-            dispatch(SetFightingPokemons([...fightingPokemons, pokemonAction]))
+            dispatch(SetFightingPokemons([...fightingPokemons, pokemonAction], updateTokens))
         }
     }
 
@@ -60,6 +69,10 @@ const PokemonCard = ( {dataPokemons, fightingPokemons, filterPokemon}:Props )=>{
         dispatch(SetFightingPokemons([...newFigthers]))
     }
 
+    const showIcon = (pokemonLoad: PokemonsData): boolean=>{
+        const index = fightingPokemons?.findIndex((pokemon: PokemonsData)=> pokemon.name === pokemonLoad.name) || 0;
+        return pokemonLoad.icon === IconType.add && index > 0;
+    }
     return (
         <div className='card'>
             {pokemons.length === 0 && <h4>Lista vacía, no hay ningun pokemon listo</h4>}
@@ -67,7 +80,7 @@ const PokemonCard = ( {dataPokemons, fightingPokemons, filterPokemon}:Props )=>{
                 pokemons.map( (pokemon: PokemonsData)=>(
                     <li className='card_list' key={pokemon.id}>
                         <div >
-                            { pokemon.showIcon
+                            { !showIcon(pokemon)
                                 ? (<i className={`fa-solid ${pokemon.icon}`}  onClick={()=>handlerFightingPokemon(pokemon)}></i>)
                             : (<i className={`fa-solid fa-check-double`}  ></i>)}
                             <NavLink to={`/pokemon/${pokemon.id}`}>

@@ -2,11 +2,6 @@ import React, {useEffect} from "react";
 import PokemonCard from "./PokemonCard";
 
 const FightingPokemons = ({pokemonsReady}: any)=> {
-
-    useEffect(() => {
-      console.log(pokemonsReady)
-    }, [pokemonsReady]);
-
     return (
         <div className='container_favorites'>
             <div>
