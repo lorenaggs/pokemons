@@ -32,17 +32,18 @@ const PokemonItem = () => {
                     <img className='imageItem'
                          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${id}.svg`}
                          alt="ImagePrin"/>
-                    <section className='detailItem'>Detalles del pokemon
-                        <h3>{pokemonSelected.name}</h3>
+                    <section className='detailItem'>
+                       <h2 className='detailPokemon'>Detalles del pokemon</h2> 
+                        <h3 className='detailName'>NOMBRE: {pokemonSelected.name}</h3>
                         <p>Numero: #{id}</p>
                         <p>Altura: {pokemonSelected.height}</p>
                         <p>Tipo {
                             pokemonSelected.types && pokemonSelected.types.map((x:Type) => (
-                                <p>- {x.type.name}</p>
+                                <p className='type'>- {x.type.name}</p>
                             ))
                         }</p>
                         <p>Estadisticas base</p>
-                        <section>
+                        <section className='pokemonStats'>
                             {pokemonSelected.stats && <RadarChart data={pokemonSelected.stats}/>}
                         </section>
                     </section>
