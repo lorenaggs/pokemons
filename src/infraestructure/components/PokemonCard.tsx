@@ -68,7 +68,8 @@ const PokemonCard = ( {dataPokemons, fightingPokemons, filterPokemon}:Props )=>{
                     <li className='card_list' key={pokemon.id}>
                         <div >
                             { pokemon.showIcon
-                                && (<i className={`fa-solid ${pokemon.icon}`}  onClick={()=>handlerFightingPokemon(pokemon)}></i>)}
+                                ? (<i className={`fa-solid ${pokemon.icon}`}  onClick={()=>handlerFightingPokemon(pokemon)}></i>)
+                            : (<i className={`fa-solid fa-check-double`}  ></i>)}
                             <NavLink to={`/pokemon/${pokemon.id}`}>
                                 <div className='card_information'>
                                     <img className='image' src={pokemon.image} alt="ImagePrin" />

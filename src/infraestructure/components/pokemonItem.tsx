@@ -7,10 +7,12 @@ import { getPokemonSelected} from "../../domain/store/slices/pokemon";
 import {Type} from "../../domain/models/PokemonInformation";
 import RadarChart from "./RadarChart";
 import FightingPokemons from "./FightingPokemons";
+import {HandlerDataPokemon} from "../../domain/service/service-pokemon";
 
 // @ts-ignore
 const PokemonItem = () => {
     const dispatch = useDispatch();
+    const urlImage = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/CODEIMAGE.png'
 
     let { id } = useParams();
     const {isLoading,  pokemonSelected, fightingPokemons } = useSelector( (state:any) => state.pokemons )
@@ -53,7 +55,7 @@ const PokemonItem = () => {
            <PokemonItemBack/>
            <div className="container">
                {!isLoading && printCard()}
-               <FightingPokemons pokemonsReady={fightingPokemons}/>
+               <FightingPokemons pokemonsReady={ HandlerDataPokemon(fightingPokemons, urlImage)}/>
            </div>
        </>
 
