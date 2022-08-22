@@ -18,7 +18,7 @@ export const getPokemons = () =>{
     }
 }
 
-export const SetFightingPokemons = (pokemon: PokemonsData[]) =>{
+export const SetFightingPokemons = (pokemon: PokemonsData[], pokemons: PokemonsData[]) =>{
 
     return async ( dispatch: any, getState: any )=> {
         dispatch(starLoadingPokemons());
