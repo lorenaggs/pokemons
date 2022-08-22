@@ -2,20 +2,21 @@ import '../../styles/pokemonItem.scss';
 import PokemonItemBack from "./pokemonItemBack";
 import {useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import { getPokemonSelected} from "../../domain/store/slices/pokemon";
 import {Type} from "../../domain/models/PokemonInformation";
 import RadarChart from "./RadarChart";
+import FightingPokemons from "./FightingPokemons";
 
 // @ts-ignore
 const PokemonItem = () => {
     const dispatch = useDispatch();
 
     let { id } = useParams();
-    const {isLoading,  pokemonSelected } = useSelector( (state:any) => state.pokemons )
+    const {isLoading,  pokemonSelected, fightingPokemons } = useSelector( (state:any) => state.pokemons )
 
     useEffect(()=>{
-        debugger
+
         console.log(pokemonSelected)
         // @ts-ignore
         dispatch(getPokemonSelected(id))
@@ -48,10 +49,14 @@ const PokemonItem = () => {
         );
     }
     return (
-     <>
-         <PokemonItemBack/>
-        {!isLoading && printCard()}
-     </>
+       <>
+           <PokemonItemBack/>
+           <div className="container">
+               {!isLoading && printCard()}
+               <FightingPokemons pokemonsReady={fightingPokemons}/>
+           </div>
+       </>
+
     )
 }
 export default PokemonItem;

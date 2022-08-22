@@ -43,3 +43,11 @@ export const getPokemonSelected = (id: string) =>{
         dispatch(setPokemonSelected( { pokemon: data}));
     }
 }
+
+export const updatePokemons = (pokemons: PokemonsData[]) =>{
+
+    return async ( dispatch: any, getState: any )=> {
+        dispatch(starLoadingPokemons());
+        dispatch(setPokemons( { pokemons}));
+    }
+}

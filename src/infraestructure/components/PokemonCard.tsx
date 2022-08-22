@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {PokemonsData} from "../../domain/models";
-import {SetFightingPokemons} from "../../domain/store/slices/pokemon";
+import {SetFightingPokemons, updatePokemons} from "../../domain/store/slices/pokemon";
 import {useDispatch} from "react-redux";
 import {NavLink} from "react-router-dom";
 enum ImagesType {
@@ -14,30 +14,26 @@ enum IconType {
 interface Props {
     dataPokemons: PokemonsData[]
     fightingPokemons?: PokemonsData[]
+    filterPokemon?: string
     imageType?: ImagesType
     imageIcon?: IconType
 }
 
-const PokemonCard = ( {dataPokemons, fightingPokemons}:Props )=>{
+const PokemonCard = ( {dataPokemons, fightingPokemons, filterPokemon}:Props )=>{
+
     const [pokemons, setPokemons] = useState<PokemonsData[]>([]);
-    const urlImage = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/CODEIMAGE.png'
     const dispatch = useDispatch();
 
     useEffect(() => {
-       const updateData:PokemonsData[]  =  dataPokemons
-           .filter( (pokemon:PokemonsData)=> pokemon.id !== -1)
-           .map((pokemon:PokemonsData, index: number)=> (
-           {
-               ...pokemon,
-               id: pokemon.id || index+1,
-               icon: pokemon.id? IconType.trash: IconType.add ,
-               showIcon: true,
-               image: urlImage.replace('CODEIMAGE', `${ pokemon.id || index+1}` )
-           }
-       ))
-
+        const updateData  = dataPokemons.filter( (pokemon:PokemonsData)=> pokemon.id !== -1)
         setPokemons(updateData);
     }, [dataPokemons]);
+
+    useEffect(() => {
+        const filterData = dataPokemons.filter( (pokemon)=>
+            pokemon.name.toUpperCase().includes(filterPokemon?.toUpperCase() || '') &&  pokemon.icon === IconType.add )
+        setPokemons(filterData);
+    }, [filterPokemon]);
 
     const handlerFightingPokemon = (pokemonAction: PokemonsData)=>{
          if( pokemonAction.icon === IconType.add){
