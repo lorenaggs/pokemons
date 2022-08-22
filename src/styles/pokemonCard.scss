@@ -3,9 +3,8 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    h4{
 
-    }
+    h4 {}
 }
 
 .card_list {
@@ -37,10 +36,10 @@
     cursor: pointer;
 }
 
-.cardImage{
+.cardImage {
     display: flex;
     flex-direction: column;
-align-items: center;
+    align-items: center;
 }
 
 .image {
@@ -72,4 +71,38 @@ align-items: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
+}
+
+
+@media all and(min-width: 768px) {
+    .card_list {
+        width: 150px;
+        height: 250px;
+        box-shadow: #4159e1 0px 5px 15px 0px;
+    }
+
+    .card_information {
+        width: 125px;
+        height: 200px;
+    }
+
+    .fa-solid.fa-plus {
+        width: 30px;
+        height: 30px;
+        right: -120px;
+        top: 17px;
+    }
+
+    .image {
+        height: 150px;
+        width: 150px;
+    }
+
+    .namePokemon {
+        font-size: 12px;
+        
+        top: 22px;
+       
+    }
+
+}

@@ -1,16 +1,10 @@
+@import './styles/variables.scss';
 @import './styles/reset.scss';
 @import './styles/app.scss';
 @import './styles/finder.scss';
 @import './styles/pokemonCard.scss';
 @import './styles/pokemonItem.scss';
 @import './styles/pokemonItemBack.scss';
-
-
-
-$mobile-width: 320px;
-$tablet-width: 768px;
-$desktop-width: 1024px;
-
 
 .container_favorites {
   background-color: rgb(242, 215, 181);
@@ -48,3 +42,4 @@ $desktop-width: 1024px;
   top: -10px;
   cursor: pointer;
 }
+

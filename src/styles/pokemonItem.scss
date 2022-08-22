@@ -1,28 +1,56 @@
 .cardItem {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 60%;
+}
+
+.detail {
+  background: linear-gradient(180deg, #a3ecbf, #e2b7e9);
+  box-shadow: #4159e1 0px 5px 15px 0px;
+  display: flex;
+  align-items: center;
+flex-direction: column;
+  width: 80%;
+  margin: 30px;
+}
+
+.imageItem {
+  margin: 30px;
+  height: 100px;
+}
+
+.detailItem {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
+.detailPokemon{
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.detailName{
+  font-size: 0.9rem;;
+  margin: 10px 0px;
+}
+
+.type{
+  background-color: red;
+  width: 100px;
+}
+
+
+@media all and(min-width: 768px){
+  .imageItem {
+    height: 250px;
   }
 
   .detail {
-    background: linear-gradient(180deg, #a3ecbf, #e2b7e9);
-    box-shadow: #4159e1 0px 5px 15px 0px;
-    display: flex;
-    align-items: center;
-
-    width: 80%;
-    margin: 30px;
+  flex-direction: row;
   }
+}
 
-  .imageItem {
-    margin: 30px;
-    height: 300px;
-  }
-
-  .detailItem {
-    margin: 10px;
-    .label{
-
-    }
-  }
