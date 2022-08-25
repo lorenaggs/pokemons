@@ -10,7 +10,7 @@
   box-shadow: #4159e1 0px 5px 15px 0px;
   display: flex;
   align-items: center;
-flex-direction: column;
+  flex-direction: column;
   width: 80%;
   margin: 30px;
 }
@@ -28,31 +28,31 @@ flex-direction: column;
   align-content: center;
 }
 
-.detailPokemon{
+.detailPokemon {
   font-size: 0.9rem;
   text-transform: uppercase;
 }
 
-.detailName{
-  font-size: 0.9rem;;
+.detailName {
+  font-size: 0.9rem;
   margin: 10px 0px;
 }
 
-.type{
+.type {
   background-color: rgb(243, 158, 158);
   width: 100px;
   margin: 5px;
 }
 
-
-@media all and(min-width: 768px){
+@media all and(min-width: 768px) {
   .imageItem {
     height: 250px;
+    width: 250px;
   }
 }
 
-@media all and(min-width: 1024px){
+@media all and(min-width: 1024px) {
   .detail {
     flex-direction: row;
-    }
+  }
 }
