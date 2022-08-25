@@ -1,5 +1,5 @@
 .container_favorites {
-  background-color: rgb(242, 215, 181);
+  background-color: #ebe0d1;
   height: 100%;
   width: 40%;
   position: fixed;
@@ -14,11 +14,12 @@
   padding: 10px 2px;
   margin: 22px 2px;
   border: 1px solid sandybrown;
-  background: rgb(202, 156, 123);
+  background: rgb(223, 183, 154);
   border-radius: 10px;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: pre;
+  font-size: 12px;
 }
 
 .fa-solid.fa-trash-can {
@@ -35,12 +36,15 @@
   cursor: pointer;
 }
 
-
 @media all and(min-width: 768px) {
   .fa-solid.fa-trash-can {
     width: 30px;
     height: 30px;
     right: -100px;
     top: 17px;
+  }
+
+  .list {
+    font-size: 17px;
   }
 }

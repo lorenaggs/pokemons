@@ -1,8 +1,16 @@
 .search {
-    padding: 10px;
-    border-radius: 10px;
-    text-align: left;
-    border: 1px solid black;
-    margin: 22px 0px;
-    width: 50%;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: left;
+  border: 1px solid black;
+  margin: 22px 0px;
+  width: 170px;
+  font-size: 12px;
+}
+
+@media all and(min-width: 768px) {
+  .search {
+    font-size: 17px;
+    width: 250px;
   }
+}

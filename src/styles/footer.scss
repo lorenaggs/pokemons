@@ -1,0 +1,38 @@
+.icons {
+  bottom: 0;
+  position: fixed;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: #dfb79a;
+  border-radius: 10px;
+ }
+
+.fa-brands,
+.fa-solid {
+  padding: 10px;
+  font-size: 20px;
+}
+
+.fa-brands:hover,
+.fa-solid:hover {
+  transform: scale(1.5);
+}
+
+.backtotop,
+.backicon {
+  // color: rgb(35, 33, 29);
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.textback {
+  margin-right: 10px;
+}
+
+.btnback {
+  background: none;
+}
